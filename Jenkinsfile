@@ -1,7 +1,6 @@
 pipeline {
   agent any
   tools(docker: 'docker') {
-sh 'docker version'
   }
 
   stages {
