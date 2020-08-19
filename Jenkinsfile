@@ -1,13 +1,19 @@
  def app
 pipeline {
     agent any
-  tools {
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-    }
     stages {
         stage('build') {
             steps {
-                  sh 'docker version'
+build:pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                  echo 'docker version'
+            }
+        }
+    }
+}
             }
         }
     }
