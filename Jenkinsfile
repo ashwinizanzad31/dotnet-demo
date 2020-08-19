@@ -1,10 +1,12 @@
  def app
 pipeline {
     agent any
+  tools {
+        docker 'docker-default'
+    }
     stages {
         stage('build') {
             steps {
-                 tool 'docker-default'
                   sh 'docker version'
             }
         }
