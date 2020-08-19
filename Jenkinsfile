@@ -1,12 +1,10 @@
 pipeline {
-  agent any
- 
-  stages {
-    stage('foo') {
-      steps {
-        tool(docker:'docker')
-        sh "docker version" // DOCKER_CERT_PATH is automatically picked up by the Docker client
-      }
+    agent { docker { image 'maven:3.3.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
     }
-  }
 }
