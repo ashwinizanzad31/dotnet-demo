@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps {
                  tool 'docker-default'
-
+                  sh 'docker version'
             }
         }
     }
