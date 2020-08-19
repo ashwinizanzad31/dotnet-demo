@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                 tool 'docker'
+                 tool 'docker-default'
 
             }
         }
